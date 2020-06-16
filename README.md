@@ -95,6 +95,18 @@ henkei.mimetype.extensions #=> ['docx']
 Henkei packages the Apache Tika application jar and requires a working JRE for it to work.
 Check that you either have the `JAVA_HOME` environment variable set, or that `java` is in your path. 
 
+## Changed to make image proccessing within tika.jar
+
+`/org/apache/tika/parser/pdf/PDFParser.properties` - changed:
+
+        extractInlineImages true
+        extractUniqueInlineImagesOnly false 
+        ocrStrategy ocr_and_text_extraction
+
+`/org/apache/tika/parser/ocr/TesseractOCRConfig.properties` - changed:
+
+        enableImageProcessing=1
+
 ### Gem
 
 Add this line to your application's Gemfile:
